@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11C.04.04 - Hacked Hogwarts Student List</title>
+    <link rel="stylesheet" href="hogwarts.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="heading">
+      <img src="housecrest/hogwarts.svg" alt="">
+      <a href="hogwarts.html"><h1>Hogwarts</h1></a>
+      <h2>School of Witchcraft and Wizardry</h2>
+      <h3>Class Of 1991</h3><div class="studentnumber"></div>
+    </div>
+
+    
+
+    <!-- Filter-->
+    <div class="filterbtns">
+      <button class="filter raise" data-action="filter" data-filter="all">All</button>
+      <button class="filter raise" data-action="filter" data-filter="gryffindor">Gryffindor</button>
+      <button class="filter raise" data-action="filter" data-filter="hufflepuff">Hufflepuff</button>
+      <button class="filter raise" data-action="filter" data-filter="ravenclaw">Ravenclaw</button>
+      <button class="filter raise" data-action="filter" data-filter="slytherin">Slytherin</button> 
+    </div>
+    
+    <div class="filterbtns">
+      <button class="filter raise" data-action="filter" data-filter="inquisitorial-squad">Inquisitorial Squad</button>
+      <button class="filter raise" data-action="filter" data-filter="unexpelled">Not expelled</button>
+      <button class="filter raise" data-action="filter" data-filter="expelled">Expelled</button>
+    </div>
+
+     <!-- Sorting -->
+     <select name="sortingList" id="sortingList">
+      <option>Sort after</option>
+      <option value="firstnamea-z">Firstname A-Z</option>
+      <option value="firstnamez-a">Firstname Z-A</option>
+      <option value="lastnamea-z">Lastname A-Z</option>
+      <option value="lastnamez-a">Lastname Z-A</option>
+      <option value="housea-z">House A-Z</option>
+      <option value="housez-a">House Z-A</option>
+    </select>
+
+    <!-- Search -->
+    <input class="search" type="search" placeholder="Search for student"/>
+  
+    <!-- Student template -->
+    <section class="container"></section>
+
+    <template>
+      <article id="student_article">
+        <img src="" alt="" />
+        <h2 class="fullname"></h2>
+        <h3 class="house"></h3>
+      </article>
+    </template>
+
+    <!-- Popup -->
+    <section id="popup">
+      <article class="housecolor">
+        <button id="close">X</button>
+        <div>
+          <h2></h2>
+          <p>Bloodstatus: <span class="bloodstatus"></span></p>
+          <p>House: <span class="house"></span></p>
+          <p class="ifExpelled"></p>
+          
+        </div>
+        <img id="popup_student_pic" src="" alt="" />
+        <img class="icons" src="icons/bloodstatus-icon.png" alt="bloodstatus icon">
+        <img class="housecrest" src="" alt="" />
+        
+        <div id="popupbuttons">
+          <button id="prefectbutton" class="raise prefectbutton">Make prefect</button>
+          <button id="expellbutton" class="raise expellbutton"></button>
+          <button id="squadbutton" class="raise squadbutton">Add to inquisitorial Squad</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- PREFECT POPUP DIALOGUE BOX -->
+    <div id="onlytwoprefects" class="hide">
+      <div class="overlay">
+        <div id="dialogcontent" class="dialogcontent">
+          <button class="closebutton">X</button>
+          <h1 id="warning">You can only have two prefects pr house and only one of each gender!</h1>
+          <h2>Remove one to make another one prefect</h2>
+          <p>
+            <button data-action="remove1">remove</button>
+            <span class="prefect1">NAME</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+    <footer>© VIVI MORTENSEN 2021</footer>
+
+    <script src="hogwarts.js"></script>
+  </body>
+</html>
